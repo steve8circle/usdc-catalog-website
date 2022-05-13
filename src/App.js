@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import UsecaseCard from './UsecaseCard';
 import UsecaseDetail from './UsecaseDetail';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 const usecases = [
   {
@@ -71,7 +71,7 @@ function App() {
         </g>
       </svg>
       </div>
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename="/">
     <Routes>
       <Route path="/" element={
           <section class="border-b py-8">
@@ -92,7 +92,7 @@ function App() {
         </div>
       </section>
         } />
-          <Route path="/detail/*" element={
+          <Route path="detail/*" element={
             <section class="border-b py-8">
               <div class="container mx-auto flex pt-4 pb-12">
                 <UsecaseDetail/>
