@@ -2,9 +2,15 @@
 
 This project is for the Circle USDC catalog website.
 
-## Available Scripts
+# Getting Started
 
-In the project directory, you can run:
+The following are commands to get started with the project including setting up, building, and deploying to the web site.
+
+### `git clone https://github.com/steve8circle/usdc-catalog-website.git`
+Clones the repo to your local drive
+
+### `npm install`
+Installs the packages specified in the package.json.
 
 ### `npm start`
 
@@ -23,6 +29,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder, and deploys the build into this site:
 https://steve8circle.github.com/usdc-catalog-website
+Optionally, we can add a commit message as follows:
+`npm run deploy -m "this is my message"`
 
 ## Learn More
 

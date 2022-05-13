@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import UsecaseCard from './UsecaseCard';
 import UsecaseDetail from './UsecaseDetail';
-import { BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const usecases = [
   {
@@ -71,9 +71,9 @@ function App() {
         </g>
       </svg>
       </div>
-    <BrowserRouter>
+    <Router basename={process.env.PUBLIC_URL}>
     <Routes>
-      <Route exact path="/" element={
+      <Route path="/" element={
           <section class="border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
           
@@ -92,16 +92,16 @@ function App() {
         </div>
       </section>
         } />
-          <Route path="/detail/:name" element={
+          <Route path="/detail/*" element={
             <section class="border-b py-8">
               <div class="container mx-auto flex pt-4 pb-12">
                 <UsecaseDetail/>
               </div>
             </section>
-        
           } />
-          </Routes>
-    </BrowserRouter>
+          <Route element={<div>404</div>} />
+        </Routes>
+    </Router>
 
    
     <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" >
