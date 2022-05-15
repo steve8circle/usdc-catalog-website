@@ -20,7 +20,7 @@ export default function UsecaseCard({ name, description, tags }) {
         </div>
         <div class="absolute top-2 right-2">
           {tags.map((tag) => (
-            <span class="bg-gray-300 rounded-full uppercase text-xs p-1">
+              <span key={tag} class="bg-gray-300 rounded-full uppercase text-xs p-1">
               <span>#{tag}</span>
             </span>
           ))}
