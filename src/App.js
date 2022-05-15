@@ -32,6 +32,16 @@ const usecases = [
   },
 ];
 
+const debounce = (func, timeout = 300) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+
 function App() {
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredUsecases, setFilteredUsecases] = useState(usecases)
@@ -39,6 +49,11 @@ function App() {
   const searchTermChanged = (term) => {
     setSearchTerm(term);
     if (term === '') return;
+    search(term);
+  }
+
+  const search = (term) => {
+    console.log("search " + term);
     term = term.toLowerCase();
     let filtered = usecases.filter(uc => {
       return uc.name.toLowerCase().indexOf(term) >= 0
@@ -46,6 +61,7 @@ function App() {
     })
     setFilteredUsecases(filtered);
   }
+  const debouncedSearchTermChanged = debounce(search);
 
   return (
     <div className="App bg-gray-100">
@@ -107,7 +123,7 @@ function App() {
             element={
               <section class="border-b py-8">
                 <div class="container mx-auto flex justify-end pr-6">
-                  <SearchInput searchTermChanged={searchTermChanged}/>
+                  <SearchInput searchTermChanged={debouncedSearchTermChanged}/>
                 </div>
                 <div class="container mx-auto flex flex-wrap pt-4 pb-12">
                 
