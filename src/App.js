@@ -48,7 +48,10 @@ function App() {
 
   const searchTermChanged = (term) => {
     setSearchTerm(term);
-    if (term === '') return;
+    if (term === '') {
+      setFilteredUsecases(usecases);
+      return;
+    }
     search(term);
   }
 
