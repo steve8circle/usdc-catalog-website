@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/usdc-catalog-website/static/css/main.238c0b93.css",
-    "main.js": "/usdc-catalog-website/static/js/main.5f1f290a.js",
+    "main.js": "/usdc-catalog-website/static/js/main.8a88d654.js",
     "static/js/787.6f2472cb.chunk.js": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js",
     "index.html": "/usdc-catalog-website/index.html",
     "main.238c0b93.css.map": "/usdc-catalog-website/static/css/main.238c0b93.css.map",
-    "main.5f1f290a.js.map": "/usdc-catalog-website/static/js/main.5f1f290a.js.map",
+    "main.8a88d654.js.map": "/usdc-catalog-website/static/js/main.8a88d654.js.map",
     "787.6f2472cb.chunk.js.map": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.238c0b93.css",
-    "static/js/main.5f1f290a.js"
+    "static/js/main.8a88d654.js"
   ]
 }
