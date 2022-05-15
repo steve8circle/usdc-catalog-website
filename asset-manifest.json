@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/usdc-catalog-website/static/css/main.6ef9ce1d.css",
-    "main.js": "/usdc-catalog-website/static/js/main.895c6f4c.js",
+    "main.css": "/usdc-catalog-website/static/css/main.238c0b93.css",
+    "main.js": "/usdc-catalog-website/static/js/main.5f1f290a.js",
     "static/js/787.6f2472cb.chunk.js": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js",
     "index.html": "/usdc-catalog-website/index.html",
-    "main.6ef9ce1d.css.map": "/usdc-catalog-website/static/css/main.6ef9ce1d.css.map",
-    "main.895c6f4c.js.map": "/usdc-catalog-website/static/js/main.895c6f4c.js.map",
+    "main.238c0b93.css.map": "/usdc-catalog-website/static/css/main.238c0b93.css.map",
+    "main.5f1f290a.js.map": "/usdc-catalog-website/static/js/main.5f1f290a.js.map",
     "787.6f2472cb.chunk.js.map": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ef9ce1d.css",
-    "static/js/main.895c6f4c.js"
+    "static/css/main.238c0b93.css",
+    "static/js/main.5f1f290a.js"
   ]
 }
