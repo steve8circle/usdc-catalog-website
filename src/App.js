@@ -3,7 +3,8 @@ import SearchInput from "./SearchInput";
 import UsecaseCard from "./UsecaseCard";
 import UsecaseDetail from "./UsecaseDetail";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import Paginator from './Paginator';
 
 const usecases = [
   {
@@ -43,19 +44,23 @@ const debounce = (func, timeout = 300) => {
 }
 
 function App() {
+  const PageSize = 3;
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredUsecases, setFilteredUsecases] = useState(usecases)
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const searchTermChanged = (term) => {
-    setSearchTerm(term);
-    if (term === '') {
-      setFilteredUsecases(usecases);
-      return;
-    }
-    search(term);
-  }
+  const currentPageUsecases = useMemo(() => {
+    const start = (currentPage - 1) * PageSize;
+    return filteredUsecases.slice(start, start + PageSize);
+  }, [currentPage, searchTerm]);
 
   const search = (term) => {
+    setSearchTerm(term);
+    if (term == '') {
+      setFilteredUsecases(usecases);
+      setCurrentPage(1);
+      return;
+    }
     console.log("search " + term);
     term = term.toLowerCase();
     let filtered = usecases.filter(uc => {
@@ -63,6 +68,7 @@ function App() {
         || uc.description.toLowerCase().indexOf(term) >= 0;
     })
     setFilteredUsecases(filtered);
+    setCurrentPage(1);
   }
   const debouncedSearchTermChanged = debounce(search);
 
@@ -134,7 +140,7 @@ function App() {
                     <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                   </div>
                   
-                  {filteredUsecases.map((usecase) => (
+                  {currentPageUsecases.map((usecase) => (
                     <div key={usecase.name} class="md:w-1/3 ">
                       <UsecaseCard 
                         class="md:w-1/3"
@@ -144,6 +150,14 @@ function App() {
                       />
                     </div>
                   ))}
+                </div>
+                <div class="container mx-auto flex justify-center">
+                  <Paginator
+                    totalSize={filteredUsecases.length}
+                    pageSize={PageSize}
+                    currentPage={currentPage}
+                    onPageChange={page => setCurrentPage(page)}
+                  />
                 </div>
               </section>
             }
