@@ -1,4 +1,5 @@
 import React from "react";
+import USDCLogo from "./usdc.jpg";
 
 export default function Header() {
   return (
@@ -18,7 +19,7 @@ export default function Header() {
           </div>
 
           <div class="w-full md:w-2/5 py-6 px-10 text-center">
-            <img class="w-full md:w-4/5 z-50" src="usdc.jpg" />
+            <img class="w-full md:w-4/5 z-50" src={USDCLogo} />
           </div>
         </div>
       </div>

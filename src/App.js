@@ -7,6 +7,7 @@ import { useState, useMemo } from "react";
 import Paginator from './Paginator';
 import Header from './Header.js';
 import Footer from './Footer.js';
+import Sidebar from "./Sidebar";
 
 const usecases = [
   {
@@ -50,6 +51,7 @@ function App() {
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredUsecases, setFilteredUsecases] = useState(usecases)
   const [currentPage, setCurrentPage] = useState(1);
+  const [category, setCategory] = useState(null);
 
   const currentPageUsecases = useMemo(() => {
     const start = (currentPage - 1) * PageSize;
@@ -86,16 +88,14 @@ function App() {
                 <div class="container mx-auto flex justify-end pr-6">
                   <SearchInput searchTermChanged={debouncedSearchTermChanged}/>
                 </div>
-                <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-                
-                  <div class="w-full mb-4">
-                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                  </div>
-                  
+                <div class="container mx-auto flex flex-row">
+                  <div class="basis-auto grow-0 shrink-0">
+                    <Sidebar onSelectionChange={setCategory}/></div>
+                <div>
+                <div class="container mx-auto grid grid-row grid-cols-3 pt-4 pb-12">
                   {currentPageUsecases.map((usecase) => (
-                    <div key={usecase.name} class="md:w-1/3 ">
+                    <div key={usecase.name}>
                       <UsecaseCard 
-                        class="md:w-1/3"
                         name={usecase.name}
                         description={usecase.description}
                         tags={usecase.tags}
@@ -110,6 +110,8 @@ function App() {
                     currentPage={currentPage}
                     onPageChange={page => setCurrentPage(page)}
                   />
+                </div>
+                </div>
                 </div>
               </section>
             }

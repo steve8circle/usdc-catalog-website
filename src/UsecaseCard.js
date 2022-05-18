@@ -12,7 +12,7 @@ export default function UsecaseCard({ name, description, tags }) {
         >
           <div class="flex items-center">  
             <img class="h-10 w-12 ml-4" src={bookIcon} /> 
-            <div class="font-bold text-xl text-gray-800 px-6">{name}</div>
+            <div class="font-bold text-xl text-gray-800 px-3">{name}</div>
           </div>
         </Link>
         <div class="text-gray-800 text-sm px-6 mb-5 text-left">
