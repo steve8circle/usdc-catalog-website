@@ -3,11 +3,12 @@ import SearchInput from "./SearchInput";
 import UsecaseCard from "./UsecaseCard";
 import UsecaseDetail from "./UsecaseDetail";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useState, useMemo,Fragment } from "react";
 import Paginator from './Paginator';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Sidebar from "./Sidebar";
+import Detail from './detail/detail';
 
 const usecases = [
   {
@@ -77,13 +78,14 @@ function App() {
   const debouncedSearchTermChanged = debounce(search);
 
   return (
-    <div className="App bg-gray-100">
-      <Header />
+    <div className="App">
       <Router basename="/">
         <Routes>
           <Route
             path="/"
             element={
+              <Fragment>
+              <Header />
               <section class="border-b py-8">
                 <div class="container mx-auto flex justify-end pr-6">
                   <SearchInput searchTermChanged={debouncedSearchTermChanged}/>
@@ -114,23 +116,23 @@ function App() {
                 </div>
                 </div>
               </section>
+              <Footer />
+              </Fragment>
             }
           />
           <Route
             path="detail/*"
             element={
-              <section class="border-b py-8">
-                <div class="container mx-auto flex pt-4 pb-12">
-                  <UsecaseDetail />
-                </div>
-              </section>
+              // <section class="border-b py-8">
+              //   <div class="container mx-auto flex pt-4 pb-12">
+                  <Detail />
+              //   </div>
+              // </section>
             }
           />
           <Route element={<div>404</div>} />
         </Routes>
       </Router>
-
-      <Footer />
     </div>
   );
 }

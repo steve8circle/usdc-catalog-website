@@ -1,0 +1,256 @@
+.Layout{
+    width: 100%;
+    height: auto;
+    padding-left: 150px;
+    padding-right: 132px;
+    min-width: 1440px;
+    background-color: #FFFFFF;
+}
+
+.Header{
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 96px;
+    overflow: hidden;
+}
+
+.Back{
+/* BACK TO ECOSYSTEM CATALOG */
+width: 300px;
+height: 24px;
+top: 175px;
+float: left;
+/* text-base/leading-6/font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+color: #9F72FF;
+}
+
+.T_E{
+width: 210px;
+height: 32px;
+top: 169px;
+float: right;
+background: #9F72FF;
+opacity: 0.6;
+border-radius: 50px;
+/* text-base/leading-6/font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 150% */
+text-align: center;
+color: #FFFFFF;
+}
+
+.DEFI{
+width: 71px;
+height: 32px;
+top: 169px;
+background: #9F72FF;
+opacity: 0.6;
+border-radius: 50px;
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 150% */
+text-align: center;
+color: #FFFFFF;
+float: right;
+margin-left: 18px;
+}
+
+.clearfix:after,.clearfix:before{
+    content: '';
+    display: table;
+}
+.clearfix:after{
+    clear:both;
+}
+
+
+.Title{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.mainImg{
+width: 160px;
+height: 160px;
+left: 151px;
+top: 249px;
+float: left;
+margin-right: 58px;
+}
+
+.h1{
+/* Liquid */
+width: 139px;
+height: 48px;
+/* text-5xl font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 48px;
+/* identical to box height, or 100% */
+/* Licorice/700 */
+color: #29233B;
+float: left;
+}
+
+.Desc{
+/* Join the world’s most comprehensive and secure trading platform for beginners and pros. */
+width: 836px;
+height: 72px;
+/* text-3xl/leading-9/font-normal */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+/* or 120% */
+/* Licorice/500 */
+color: #4E4763;
+float: left;
+text-align: left;
+margin-top: 17px;
+}
+
+.twitter{
+/* Icon */
+left: 10%;
+right: 10%;
+top: 10%;
+bottom: 10%;
+float: right;
+margin-left: 29px;
+/* Licorice/900 */
+}
+
+.globe{
+left: 10%;
+right: 10%;
+top: 10%;
+bottom: 10%;
+/* Licorice/900 */
+float: right;
+}
+
+.Intro{
+    overflow: hidden;
+    width: auto;
+    margin-bottom: 90px;
+}
+
+.words{
+    width: 690px;
+    border-right: 1px solid #C7C5D1;
+    float: left;
+}
+
+.h2{
+/* How Liquid leverages USDC */
+width: 314px;
+height: 32px;
+/* text-2xl font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+/* Licorice/700 */
+color: #29233B;
+margin-bottom: 25px;
+}
+
+p{
+width: 650px;
+height: auto;
+/* text-xl/leading-8/font-semibold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 32px;
+/* or 160% */
+text-align: left;
+/* Licorice/500 */
+color: #4E4763;
+margin-bottom:40px;
+}
+
+.stats{
+    float: left;
+    margin-left: 56px;
+}
+
+.total{
+/* 155.8mm */
+width: auto;
+height: auto;
+/* text-6xl font-normal */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 400;
+font-size: 60px;
+line-height: 60px;
+/* Progress Gradient */
+background: linear-gradient(90deg, #B090F5 1.04%, #1AA3FF 98.61%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.number{
+/* USDC */
+width: auto;
+height: auto;
+/* text-lg font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+/* Licorice/300 */
+color: #8A849C;
+}
+
+.number_divide{
+    width: 110px;
+    margin-top: 43px;
+    border-right: 1px solid #C7C5D1;
+    float: left;
+    margin-left: 20px;
+}
+
+.divide{
+width: auto;
+height: auto;
+/* text-3xl font-normal */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+/* Progress Gradient */
+background: linear-gradient(90deg, #B090F5 1.04%, #1AA3FF 98.61%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
