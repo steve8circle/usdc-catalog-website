@@ -3,7 +3,7 @@ import SearchInput from "./SearchInput";
 import UsecaseCard from "./UsecaseCard";
 import UsecaseDetail from "./UsecaseDetail";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useMemo,Fragment } from "react";
+import { useState, useMemo,Fragment, useEffect } from "react";
 import Paginator from './Paginator';
 import Header from './Header.js';
 import Footer from './Footer.js';
@@ -48,6 +48,16 @@ const debounce = (func, timeout = 300) => {
 }
 
 function App() {
+
+  const [items,setItems] = useState([]);
+  useEffect(() => {
+    fetch(" https://localhost:10054/api/v1/apps",
+    {mode:'cors',
+    credentials: 'include'})
+    .then(res => res.json)
+    .then((result) => console.log(result))
+  })
+
   const PageSize = 3;
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredUsecases, setFilteredUsecases] = useState(usecases)

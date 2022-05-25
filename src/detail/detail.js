@@ -12,12 +12,11 @@ export default function detail(){
             <div className='Layout'>
                 <div className='Header'>
                     <Link to='/'>
-                        <div className='Back'>BACK TO ECOSYSTEM CATALOG</div>
+                        <div className='Back hover:underline underline-offset-2'>&lt; BACK TO ECOSYSTEM CATALOG</div>
                     </Link>
-                    <div className='DEFI'>DEFI</div>
-                    <div className='T_E'>TRADING/EXCHANGES</div>
+                    <div className='DEFI hover:bg-violet-600'>DEFI</div>
+                    <div className='T_E hover:bg-violet-600'>TRADING/EXCHANGES</div>
                 </div>
-                {/* <div className='clearfix'></div> */}
                 <div className='Title'>
                     <img src={p1} alt='' className='mainImg'></img>
                     <h1 className='h1'>Liquid</h1>

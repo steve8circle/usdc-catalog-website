@@ -1,5 +1,5 @@
-.caro{
-min-width: 1440px;
+.more-caro{
+min-width: 1300px;
 height: auto;
 /* Jelly Frosting */
 background: linear-gradient(88.57deg, #F1EBFF 0%, #DDEFFF 94.58%);
@@ -22,7 +22,7 @@ color: #29233B;
 margin-bottom: 24px;
 }
 
-.caroItem{
+.more-caroItem{
 width: 316px;
 height: 235px;
 
@@ -33,19 +33,19 @@ border-radius: 10px;
 padding: 24px;
 }
 
-.caroItem .title{
+.more-caroItem .title{
     overflow: hidden;
     height: 83px;
     width:auto;
 }
 
-.caroItem img{
+.more-caroItem img{
 width: 60px;
 height: 60px;
 float: left;
 }
 
-.caroItem h2{
+.more-caroItem h2{
 float: left;
 width: 132.3px;
 height: 32px;
@@ -60,7 +60,7 @@ color: #29233B;
 margin-top: 12px;
 }
 
-.caroItem .intro{
+.more-caroItem .intro{
 width: 265.66px;
 height: 89px;
 

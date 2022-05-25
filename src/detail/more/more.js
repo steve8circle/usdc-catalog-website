@@ -36,7 +36,7 @@ const likes=[{
 
 export default function more() {
   return (
-    <div className='caro'>
+    <div className='more-caro'>
         <h2 className='more-h2'>More like this</h2>
         <Swiper
         spaceBetween={38}
@@ -55,7 +55,7 @@ export default function more() {
 function getMore(){
     return (likes.map((like) => 
     <SwiperSlide>
-        <div className='caroItem'>
+        <div className='more-caroItem hover:drop-shadow-2xl'>
             <div className='title'>
                 <img src={like.logo} alt=''></img>
                 <h2>{like.title}</h2>
