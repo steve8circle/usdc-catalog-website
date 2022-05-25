@@ -30,23 +30,24 @@ export default function Footer() {
       </svg>
 
       <footer class="bg-black text-white">
-        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="container px-3 mx-auto pt-10 flex flex-wrap flex-col md:flex-row items-start">
           <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <h1 className="my-4 text-4xl font-bold leading-tight">
-              Building on top of USDC?
+            List your app or business in our catalog
             </h1>
           </div>
 
-          <div class="w-full md:w-3/5 py-6 px-10 text-start">
+          <div class="w-full md:w-3/5 py-6 px-10 text-justify">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed
-              condimentum sapien. Aliquam scelerisque dui augue, eget vehicula
-              sapien tristique nec.
+              Contribute to keeping our ecosystem catalog up-to-date and gain exposure
+              for your app or business. Submit your information via our Github repo.
             </p>
-            <div class="flex justify-start">
-              <button class="border-2 border-white my-10 p-2 text-sm hover:text-base items-start">
-                Submit Project
-              </button>
+            <div class="flex justify-center">
+              <a class="border-2 border-white my-10 p-2 text-sm uppercase hover:text-base items-start"
+                href="https://github.com/thomaslow-circle/circle-ecosystem" target="_blank"
+              >
+                ecosystem Github Repo
+              </a>
             </div>
           </div>
         </div>

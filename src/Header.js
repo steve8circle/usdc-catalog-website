@@ -12,9 +12,8 @@ export default function Header() {
               or build on top of USDC
             </h1>
             <p class="leading-normal text-xl mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed
-              condimentum sapien. Aliquam scelerisque dui augue, eget vehicula
-              sapien tristique nec.
+              Thousands of apps, dApps, and businesses around the world support USDC today.
+              Learn all the ways you can use USDC by exploring the ecosystem catalog.
             </p>
           </div>
 
