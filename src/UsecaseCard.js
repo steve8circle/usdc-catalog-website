@@ -5,7 +5,7 @@ import bookIcon from "./book-icon.png";
 export default function UsecaseCard({ name, description, tags }) {
   return (
     <div class="w-full h-96 p-6 flex flex-col">
-      <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow relative">
+      <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
         <Link
           to={`/detail/${name}`}
           class="flex flex-wrap no-underline hover:no-underline mt-5"
