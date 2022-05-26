@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import bookIcon from "./book-icon.png";
 
-export default function UsecaseCard({ name, description, tags }) {
+export default function UsecaseCard({ name, description, slug}) {
+  let [tags, setTags] = useState([]);
+  useEffect(() => {
+    const url="https://localhost:10054/api/v1/apps/"+slug
+    const fetchData = async() => {
+      try {
+        const response=await fetch(url);
+        const json = await response.json();
+        setTags(json['data']['products']);
+      }catch(error){
+        console.log("error",error);
+      }
+      };
+      fetchData();
+    },[])
+  
   return (
     <Link
-          to={`/detail/${name}`}
+          to={`/detail/${slug}`}
           class="flex flex-wrap no-underline hover:no-underline mt-5"
     >
       <div class="w-full h-96 p-6 flex flex-col hover:drop-shadow-md">

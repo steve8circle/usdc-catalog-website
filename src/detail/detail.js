@@ -1,12 +1,30 @@
-import { Fragment } from 'react'
-import './detail.css'
+import { Fragment, useState, useEffect } from 'react'
+import './Detail.css'
 import p1 from './img/1.png'
 import twitter from './img/twitter.png'
 import globe from './img/globe.png'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import More from './more/more.js'
 
-export default function detail(){
+export default function Detail(){
+    const {slug}=useParams();
+    let [detail,setDetail]=useState({})
+
+    useEffect(() => {
+    const url="https://localhost:10054/api/v1/apps/"+slug
+    const fetchData = async() => {
+      try {
+        const response=await fetch(url);
+        const json = await response.json();
+        setDetail(json['data']);
+      }catch(error){
+        console.log("error",error);
+      }
+      };
+      fetchData();
+    },[slug])
+
     return (
         <Fragment>
             <div className='Layout bg-gray-100'>
@@ -18,11 +36,15 @@ export default function detail(){
                     <div className='T_E hover:bg-violet-600'>TRADING/EXCHANGES</div>
                 </div>
                 <div className='Title'>
-                    <img src={p1} alt='' className='mainImg'></img>
-                    <h1 className='h1'>Liquid</h1>
-                    <img src={twitter} alt='' className='twitter'></img>
-                    <img src={globe} alt='' className='globe'></img>
-                    <div className='Desc'>Join the most comprehensive and secure trading platform for beginners and pros.</div>
+                    <img src={detail.logo} alt='' className='mainImg'></img>
+                    <h1 className='h1'>{detail.appName}</h1>
+                    {/* <a href={detail.tags.twitter}> */}
+                        <img src={twitter} alt='' className='twitter'></img>
+                    {/* </a> */}
+                    {/* <a href={detail.tags.telegram}> */}
+                        <img src={globe} alt='' className='globe'></img>
+                    {/* </a> */}
+                    <div className='Desc'>{detail.description}</div>
                 </div>
                 <div className='Intro'>
                     <div className='words'>
@@ -31,7 +53,7 @@ export default function detail(){
                         <p>Nunc mauris lectus, tincidunt fermentum mollis nec, venenatis eu diam. In faucibus, lacus id maximus imperdiet, ante sem cursus orci, vel pulvinar tellus metus vestibulum nisi. </p>
                         <p>Morbi nisl dui, lacinia quis mollis nec, elementum a nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa erat, dictum id nunc eu, posuere blandit magna. Mauris feugiat non ante a iaculis. Donec ac congue purus. </p>
                     </div>
-                    <div className='stats'>
+                    {/* <div className='stats'>
                         <h2 className='h2'>Stats</h2>
                         <div className='number'><span className='total'>155.8mm</span> USDC</div>
                         <div className='number_divide'>
@@ -46,7 +68,7 @@ export default function detail(){
                             <div className='divide'>44.8mm</div>
                             <div className='number'>USDC/AVAX</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <More />

@@ -153,11 +153,11 @@ float: right;
     margin-bottom: 90px;
 }
 
-.words{
+/* .words{
     width: 690px;
     border-right: 1px solid #C7C5D1;
     float: left;
-}
+} */
 
 .h2{
 /* How Liquid leverages USDC */
@@ -178,7 +178,7 @@ margin-bottom: 25px;
 }
 
 p{
-width: 650px;
+/* width: 650px; */
 height: auto;
 /* text-xl/leading-8/font-semibold */
 font-family: 'CircularXX';

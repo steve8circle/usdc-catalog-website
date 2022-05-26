@@ -43,8 +43,8 @@ export default function more() {
         slidesPerView={3.5}
         modules={[Navigation, Pagination, A11y]}
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
         >
         {getMore()}
         </Swiper>

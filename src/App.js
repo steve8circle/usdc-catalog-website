@@ -3,13 +3,13 @@ import SearchInput from "./SearchInput";
 import UsecaseCard from "./UsecaseCard";
 import UsecaseDetail from "./UsecaseDetail";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useMemo,Fragment, useEffect } from "react";
+import { useState, useMemo,Fragment, useEffect,useRef } from "react";
 import Paginator from './Paginator';
 import Header from "./Header";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import Detail from './detail/detail';
+import Detail from './detail/Detail';
 
 const usecases = [
   {
@@ -50,36 +50,41 @@ const debounce = (func, timeout = 300) => {
 
 function App() {
 
-  const [items,setItems] = useState([]);
-  useEffect(() => {
-    fetch(" https://localhost:10054/api/v1/apps",
-    {mode:'cors',
-    credentials: 'include'})
-    .then(res => res.json)
-    .then((result) => console.log(result))
-  })
-
+  let [filteredUsecases, setFilteredUsecases] = useState([]);
+  let [currentPageUsecases,setCurrentUsecases] = useState([]);
   const PageSize = 3;
   let [searchTerm, setSearchTerm] = useState("");
-  let [filteredUsecases, setFilteredUsecases] = useState(usecases);
   const [currentPage, setCurrentPage] = useState(1);
   const [category, setCategory] = useState(null);
 
-  const currentPageUsecases = useMemo(() => {
+  useEffect(() => {
+    const url="https://localhost:10054/api/v1/apps"
+    const fetchData = () => {
+      try {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => setFilteredUsecases(data['data']));
+      }catch(error){
+        console.log("error",error);
+      }
+      };
+      fetchData();
+    },[])
+
+  currentPageUsecases = useMemo(() => {
     const start = (currentPage - 1) * PageSize;
     return filteredUsecases.slice(start, start + PageSize);
-  }, [currentPage, searchTerm]);
+  }, [currentPage, searchTerm,filteredUsecases]);
 
   const search = (term) => {
     setSearchTerm(term);
     if (term == "") {
-      setFilteredUsecases(usecases);
       setCurrentPage(1);
       return;
     }
     console.log("search " + term);
     term = term.toLowerCase();
-    let filtered = usecases.filter((uc) => {
+    let filtered = filteredUsecases.filter((uc) => {
       return (
         uc.name.toLowerCase().indexOf(term) >= 0 ||
         uc.description.toLowerCase().indexOf(term) >= 0
@@ -89,6 +94,7 @@ function App() {
     setCurrentPage(1);
   };
   const debouncedSearchTermChanged = debounce(search);
+  
 
   return (
     <div className="App bg-gray-100">
@@ -107,18 +113,18 @@ function App() {
                       searchTermChanged={debouncedSearchTermChanged}
                     />
                   </div>
-                  <div class="container mx-auto flex flex-row">
-                    <div class="basis-auto grow-0 shrink-0">
+                  <div className="container mx-auto flex flex-row">
+                    <div className="basis-auto grow-0 shrink-0">
                       <Sidebar onSelectionChange={setCategory} />
                     </div>
                     <div>
-                      <div class="container mx-auto grid grid-row grid-cols-3 pt-4 pb-12">
+                      <div className="container mx-auto grid grid-row grid-cols-3 pt-4 pb-12">
                         {currentPageUsecases.map((usecase) => (
-                          <div key={usecase.name}>
+                          <div key={usecase.appName} className='min-w-[300px]'>
                             <UsecaseCard
-                              name={usecase.name}
+                              name={usecase.appName}
                               description={usecase.description}
-                              tags={usecase.tags}
+                              slug={usecase.slug}
                             />
                           </div>
                         ))}
@@ -138,7 +144,7 @@ function App() {
             }
           />
           <Route
-            path="detail/*"
+            path="detail/:slug"
             element={
               // <section class="border-b py-8">
               //   <div class="container mx-auto flex pt-4 pb-12">
