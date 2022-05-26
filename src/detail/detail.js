@@ -9,7 +9,7 @@ import More from './more/more.js'
 export default function detail(){
     return (
         <Fragment>
-            <div className='Layout'>
+            <div className='Layout bg-gray-100'>
                 <div className='Header'>
                     <Link to='/'>
                         <div className='Back hover:underline underline-offset-2'>&lt; BACK TO ECOSYSTEM CATALOG</div>
