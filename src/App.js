@@ -150,6 +150,8 @@ function App() {
           <Route element={<div>404</div>} />
         </Routes>
       </Router>
+
+      <Footer/>
     </div>
   );
 }

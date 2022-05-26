@@ -29,7 +29,7 @@ export default function Footer() {
         </g>
       </svg>
 
-      <footer class="bg-black text-white">
+      <footer class="bg-black text-gray-200">
         <div class="container px-3 mx-auto pt-10 flex flex-wrap flex-col md:flex-row items-start">
           <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <h1 className="my-4 text-4xl font-bold leading-tight">
@@ -38,10 +38,10 @@ export default function Footer() {
           </div>
 
           <div class="w-full md:w-3/5 py-6 px-10 text-justify">
-            <p>
+            <span>
               Contribute to keeping our ecosystem catalog up-to-date and gain exposure
               for your app or business. Submit your information via our Github repo.
-            </p>
+            </span>
             <div class="flex justify-center">
               <a class="border-2 border-white my-10 p-2 text-sm uppercase hover:text-base items-start"
                 href="https://github.com/thomaslow-circle/circle-ecosystem" target="_blank"
