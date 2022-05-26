@@ -1,0 +1,94 @@
+.more-caro{
+min-width: 1300px;
+height: auto;
+/* Jelly Frosting */
+background: linear-gradient(88.57deg, #F1EBFF 0%, #DDEFFF 94.58%);
+padding-left: 153px;
+padding-top: 78px;
+padding-bottom: 102px;
+}
+
+.more-h2{
+width: 151px;
+height: 32px;
+/* text-2xl font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* Licorice/700 */
+color: #29233B;
+margin-bottom: 24px;
+}
+
+.more-caroItem{
+width: 316px;
+height: 235px;
+
+/* white */
+background: #FFFFFF;
+box-shadow: 0px 0px 10px rgba(159, 114, 255, 0.12);
+border-radius: 10px;
+padding: 24px;
+}
+
+.more-caroItem .title{
+    overflow: hidden;
+    height: 83px;
+    width:auto;
+}
+
+.more-caroItem img{
+width: 60px;
+height: 60px;
+float: left;
+}
+
+.more-caroItem h2{
+float: left;
+width: 132.3px;
+height: 32px;
+/* text-2xl font-bold */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* Licorice/700 */
+color: #29233B;
+margin-top: 12px;
+}
+
+.more-caroItem .intro{
+width: 265.66px;
+height: 89px;
+
+/* text-lg/leading-6/font-normal */
+font-family: 'CircularXX';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* Licorice/500 */
+color: #4E4763;
+text-align: left;
+}
+
+
+.swiper-pagination {
+    position:unset;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+    margin-top: 43px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #9F72FF;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #9F72FF;
+}

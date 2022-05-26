@@ -3,12 +3,13 @@ import SearchInput from "./SearchInput";
 import UsecaseCard from "./UsecaseCard";
 import UsecaseDetail from "./UsecaseDetail";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useMemo } from "react";
-import Paginator from "./Paginator";
+import { useState, useMemo,Fragment, useEffect } from "react";
+import Paginator from './Paginator';
 import Header from "./Header";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import Detail from './detail/detail';
 
 const usecases = [
   {
@@ -48,6 +49,16 @@ const debounce = (func, timeout = 300) => {
 };
 
 function App() {
+
+  const [items,setItems] = useState([]);
+  useEffect(() => {
+    fetch(" https://localhost:10054/api/v1/apps",
+    {mode:'cors',
+    credentials: 'include'})
+    .then(res => res.json)
+    .then((result) => console.log(result))
+  })
+
   const PageSize = 3;
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredUsecases, setFilteredUsecases] = useState(usecases);
@@ -129,18 +140,16 @@ function App() {
           <Route
             path="detail/*"
             element={
-              <section class="border-b py-8">
-                <div class="container mx-auto flex pt-4 pb-12">
-                  <UsecaseDetail />
-                </div>
-              </section>
+              // <section class="border-b py-8">
+              //   <div class="container mx-auto flex pt-4 pb-12">
+                  <Detail />
+              //   </div>
+              // </section>
             }
           />
           <Route element={<div>404</div>} />
         </Routes>
       </Router>
-
-      <Footer />
     </div>
   );
 }
