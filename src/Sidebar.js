@@ -32,7 +32,7 @@ export default function Sidebar({ category, onSelectionChange }) {
             {cat === category && (
               <span onClick={() => onSelectionChange(null)}
                 class="text-sm text-gray-900 hover:text-gray-900 hover:cursor-pointer transition duration-300 ease-in-out border-blue-100">
-                <span class="border-b-indigo-500 border-b-4 pb-1">{cat}</span>
+                <span class="border-b-indigo-500 border-b-2 pb-1">{cat}</span>
               </span>
             )}
           </li>
