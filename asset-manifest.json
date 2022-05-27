@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/usdc-catalog-website/static/css/main.27f12b89.css",
-    "main.js": "/usdc-catalog-website/static/js/main.98999f15.js",
+    "main.css": "/usdc-catalog-website/static/css/main.550db78f.css",
+    "main.js": "/usdc-catalog-website/static/js/main.142938b8.js",
     "static/js/787.6f2472cb.chunk.js": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js",
     "static/media/usdc.jpg": "/usdc-catalog-website/static/media/usdc.a83621ead639dd1f5335.jpg",
     "static/media/circle_logo_dark.png": "/usdc-catalog-website/static/media/circle_logo_dark.9c7512db0fa9be30e186.png",
     "index.html": "/usdc-catalog-website/index.html",
-    "main.27f12b89.css.map": "/usdc-catalog-website/static/css/main.27f12b89.css.map",
-    "main.98999f15.js.map": "/usdc-catalog-website/static/js/main.98999f15.js.map",
+    "main.550db78f.css.map": "/usdc-catalog-website/static/css/main.550db78f.css.map",
+    "main.142938b8.js.map": "/usdc-catalog-website/static/js/main.142938b8.js.map",
     "787.6f2472cb.chunk.js.map": "/usdc-catalog-website/static/js/787.6f2472cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27f12b89.css",
-    "static/js/main.98999f15.js"
+    "static/css/main.550db78f.css",
+    "static/js/main.142938b8.js"
   ]
 }
