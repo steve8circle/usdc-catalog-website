@@ -99,7 +99,6 @@ function App() {
   return (
     <div className="App bg-gray-100">
       <Header />
-
       <Router basename="/">
         <Routes>
           <Route
@@ -113,9 +112,9 @@ function App() {
                       searchTermChanged={debouncedSearchTermChanged}
                     />
                   </div>
-                  <div className="container mx-auto flex flex-row">
-                    <div className="basis-auto grow-0 shrink-0">
-                      <Sidebar onSelectionChange={setCategory} />
+                  <div class="container mx-auto flex flex-row">
+                    <div class="basis-auto grow-0 shrink-0">
+                      <Sidebar category={category} onSelectionChange={setCategory} />
                     </div>
                     <div>
                       <div className="container mx-auto grid grid-row grid-cols-3 pt-4 pb-12">
