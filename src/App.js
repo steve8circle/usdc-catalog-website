@@ -93,7 +93,6 @@ function App() {
   return (
     <div className="App bg-gray-100">
       <Header />
-
       <Router basename="/">
         <Routes>
           <Route
@@ -109,7 +108,7 @@ function App() {
                   </div>
                   <div class="container mx-auto flex flex-row">
                     <div class="basis-auto grow-0 shrink-0">
-                      <Sidebar onSelectionChange={setCategory} />
+                      <Sidebar category={category} onSelectionChange={setCategory} />
                     </div>
                     <div>
                       <div class="container mx-auto grid grid-row grid-cols-3 pt-4 pb-12">
