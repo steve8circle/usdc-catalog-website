@@ -14,6 +14,7 @@ jobs:
           script: |
             const forbiddenWords = ["WIP", "temp", "draft"]; 
             const prBody = context.payload.pull_request.body || "";
+            console.log("prBody: " + prBody);
             const found = forbiddenWords.filter(word => prBody.toLowerCase().includes(word.toLowerCase()));
 
             if (found.length > 0) {
