@@ -1,6 +1,6 @@
 # Overview
 
-This project is for the Circle USDC catalog website. It's still under development.
+This project is for the Circle USDC catalog website. It's still under development. We will merge soon.
 
 # Getting Started
 
