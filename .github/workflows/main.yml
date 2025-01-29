@@ -12,13 +12,15 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const forbiddenWords = ["WIP", "temp", "draft"]; 
-            const prBody = context.payload.pull_request.body || "";
-            console.log("prBody: " + prBody);
-            const found = forbiddenWords.filter(word => prBody.toLowerCase().includes(word.toLowerCase()));
+            const summary = context.payload.pull_request.body || "";
+            const headings = ["## Problem", "## Solution", "## Testing"];
+            const lines = summary.split(/\r?\n/);
 
-            if (found.length > 0) {
-              core.setFailed(`PR description contains forbidden words: ${found.join(", ")}`);
-            } else {
-              console.log("PR description is valid.");
+            for (const heading of headings) {
+              const index = lines.findIndex(line => line.trim() === heading);
+              if (index === -1 || index === lines.length - 1 || !lines[index + 1].trim()) {
+                core.setFailed(`PR description must contain ## Problem, ## Solution, and ## Testing, and followed by details in next lines.`);
+                return;
+              }
             }
+            console.log("PR description is valid.");
