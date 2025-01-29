@@ -2,7 +2,6 @@
 
 This project is for the Circle USDC catalog website. It's still under development.
 
-Additional change. Another change.
 
 # Getting Started
 
