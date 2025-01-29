@@ -2,6 +2,7 @@
 
 This project is for the Circle USDC catalog website. It's still under development.
 
+
 # Getting Started
 
 The following are commands to get started with the project including setting up, building, and deploying to the web site.
