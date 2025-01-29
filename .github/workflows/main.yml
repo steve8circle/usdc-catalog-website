@@ -1,0 +1,23 @@
+name: PR Summary Check
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  check-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR description for certain words
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const forbiddenWords = ["WIP", "temp", "draft"]; 
+            const prBody = context.payload.pull_request.body || "";
+            const found = forbiddenWords.filter(word => prBody.toLowerCase().includes(word.toLowerCase()));
+
+            if (found.length > 0) {
+              core.setFailed(`PR description contains forbidden words: ${found.join(", ")}`);
+            } else {
+              console.log("PR description is valid.");
+            }
